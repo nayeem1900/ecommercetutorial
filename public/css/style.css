@@ -1,0 +1,24 @@
+
+
+
+.navbar-light {
+
+    background-color: #943a3a;
+
+}
+
+
+.margintop20{
+    margin-top:20px;
+}
+.feature-img{
+    max-height: 200px;
+}
+
+.footer-bottom{
+
+    padding: 20px;
+    margin-top:20px;
+    background-color: #943a3a;
+
+}
