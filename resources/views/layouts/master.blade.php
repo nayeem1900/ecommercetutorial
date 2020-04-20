@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>ecommerce</title>
+    <title>@yield('title', 'ecommerce')</title>
   @include('layouts.partial.style')
 </head>
 <body>

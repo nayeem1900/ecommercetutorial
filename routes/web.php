@@ -19,9 +19,12 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', 'PagesController@index')->name('index');
 Route::get('/contact', 'PagesController@contact')->name('contact');
+Route::get('/search', 'PagesController@search')->name('search');
+
 
 Route::get('/products', 'PagesController@products')->name('products');
-
+Route::get('/product/{slug}','ProductController@show')->name('show');
+//product route
 Route::group(['prefix'=>'admin'], function(){
 
     Route::get('/', 'AdminPagesController@index')->name('admin.pages.n');
@@ -37,3 +40,17 @@ Route::group(['prefix'=>'admin'], function(){
     Route::post('/product/delete/{id}', 'AdminPagesController@product_delete')->name('admin.product.delete');
 });
 
+//category route
+
+
+Route::group(['prefix'=>'admin'], function(){
+
+
+     Route::get('/categories', 'CategoryController@index')->name('admin.categories');
+    Route::get('/category/create', 'CategoryController@create')->name('admin.category.create');
+    Route::post('/category/create', 'CategoryController@store')->name('admin.category.store');
+    Route::get('/category/edit/{id}', 'CategoryController@edit')->name('admin.category.edit');
+    Route::post('/category/edit/{id}', 'CategoryController@update')->name('admin.category.update');
+    Route::post('/category/delete/{id}', 'CategoryController@category_delete')->name('admin.category.delete');
+
+});

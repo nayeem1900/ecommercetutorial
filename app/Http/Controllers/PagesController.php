@@ -9,7 +9,10 @@ class PagesController extends Controller
 
    public function index (){
 
-       return view('pages.index');
+       $products=Product::orderBy('id','desc')->paginate(3);
+
+       return view('pages.product.index', compact('products'));
+
    }
 
 
@@ -21,10 +24,28 @@ class PagesController extends Controller
 
     public function products (){
 
-       $products=Product::orderBy('id','desc')->get();
+       $products=Product::orderBy('id','desc')->paginate(3);
 
         return view('pages.product.index')->with('products',$products);
     }
+
+
+    public function search (Request $request){
+        $search=$request->search;
+
+        $products=Product::orWhere('title','like','%'.$search.'%')
+            ->orWhere('description','like','%'.$search.'%')
+           -> orWhere('price','like','%'.$search.'%')
+               -> orWhere('quantity','like','%'.$search.'%')
+            -> orWhere('slug','like','%'.$search.'%')
+                   -> orderBy('id','desc')->paginate(3);
+
+        return view('pages.search', compact('search','products'));
+
+    }
+
+
+
 }
 
 

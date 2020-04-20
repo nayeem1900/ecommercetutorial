@@ -259,19 +259,19 @@
                     <li class="nav-item">
                         <a class="nav-link" data-toggle="collapse" href="#layoutsSubmenu" aria-expanded="false" aria-controls="layoutsSubmenu">
                             <i class="mdi mdi-arrow-expand-all menu-icon"></i>
-                            <span class="menu-title">Page Layouts</span>
+                            <span class="menu-title">Product Manage</span>
                             <i class="mdi mdi-chevron-down menu-arrow"></i>
                         </a>
                         <div class="collapse" id="layoutsSubmenu">
                             <ul class="nav flex-column sub-menu">
                                 <li class="nav-item">
-                                    <a class="nav-link" href="../layout/boxed-layout.html">Boxed</a>
+                                    <a class="nav-link" href="{{route('products')}}">Products</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="../layout/rtl-layout.html">Rtl</a>
+                                    <a class="nav-link" href="{{route('admin.product.store')}}">Store Product</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="../layout/horizontal-menu.html">Horizontal Menu</a>
+                                    <a class="nav-link" href="{{route('admin.products')}}">All Products</a>
                                 </li>
                             </ul>
                         </div>
@@ -279,7 +279,7 @@
                     <li class="nav-item">
                         <a class="nav-link" data-toggle="collapse" href="#sidebar_layouts" aria-expanded="false" aria-controls="sidebar_layouts">
                             <i class="mdi mdi-format-list-bulleted menu-icon"></i>
-                            <span class="menu-title">Sidebar Layouts</span>
+                            <span class="menu-title">Manage Category</span>
                             <i class="mdi mdi-chevron-down menu-arrow"></i>
                         </a>
                         <div class="collapse" id="sidebar_layouts">

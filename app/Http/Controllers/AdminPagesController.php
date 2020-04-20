@@ -97,6 +97,7 @@ class AdminPagesController extends Controller
                   $product_image->save();
 
               }
+             session()->flash('success','A new category added success');
 
               return redirect()->route('admin.product.create');
           }

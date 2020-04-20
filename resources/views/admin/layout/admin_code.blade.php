@@ -162,19 +162,19 @@
                             </ul>
                         </div>
                     </li>
-                    <li class="nav-item">
+                {  {{-- <li class="nav-item">
                         <a class="nav-link" data-toggle="collapse" href="#sidebar_layouts" aria-expanded="false" aria-controls="sidebar_layouts">
                             <i class="mdi mdi-format-list-bulleted menu-icon"></i>
-                            <span class="menu-title">Sidebar Layouts</span>
+                            <span class="menu-title">Manage Category</span>
                             <i class="mdi mdi-chevron-down menu-arrow"></i>
                         </a>
                         <div class="collapse" id="sidebar_layouts">
                             <ul class="nav flex-column sub-menu">
                                 <li class="nav-item">
-                                    <a class="nav-link" href="pages/layout/compact-menu.html">Compact menu</a>
+                                    <a class="nav-link" href="{{route('admin.categories')}}">Manage category</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="pages/layout/sidebar-collapsed.html">Icon menu</a>
+                                    <a class="nav-link" href="{{route('admin.category.create')}}">Add Category</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="pages/layout/sidebar-hidden.html">Sidebar Hidden</a>
@@ -187,7 +187,7 @@
                                 </li>
                             </ul>
                         </div>
-                    </li>
+                    </li>--}}
                     <!--main pages end-->
                     <!--sample pages start-->
                     <li class="nav-item nav-category">
@@ -196,14 +196,14 @@
                     <li class="nav-item">
                         <a class="nav-link" data-toggle="collapse" href="#authSubmenu" aria-expanded="false" aria-controls="authSubmenu">
                             <i class="mdi mdi-lock-outline menu-icon"></i>
-                            <span class="menu-title">Authentication</span>
+                            <span class="menu-title">Manage Category</span>
                             <i class="mdi mdi-chevron-down menu-arrow"></i>
                         </a>
                         <div class="collapse" id="authSubmenu">
                             <ul class="nav flex-column sub-menu">
                                 <li class="nav-item">
-                                    <a class="nav-link" href="pages/samples/login.html">
-                                        Login
+                                    <a class="nav-link" href="{{route('admin.categories')}}">
+                                        Manage Category
                                     </a>
                                 </li>
                                 <li class="nav-item">
