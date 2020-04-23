@@ -162,7 +162,7 @@
                             </ul>
                         </div>
                     </li>
-                {  {{-- <li class="nav-item">
+                 {{-- <li class="nav-item">
                         <a class="nav-link" data-toggle="collapse" href="#sidebar_layouts" aria-expanded="false" aria-controls="sidebar_layouts">
                             <i class="mdi mdi-format-list-bulleted menu-icon"></i>
                             <span class="menu-title">Manage Category</span>
@@ -211,41 +211,26 @@
                                         Login 2
                                     </a>
                                 </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="pages/samples/register.html">
-                                        Register
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="pages/samples/register-2.html">
-                                        Register 2
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="pages/samples/lock-screen.html">
-                                        Lockscreen
-                                    </a>
-                                </li>
+
+
                             </ul>
                         </div>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" data-toggle="collapse" href="#errorSubmenu" aria-expanded="false" aria-controls="errorSubmenu">
                             <i class="mdi mdi-alert-circle-outline menu-icon"></i>
-                            <span class="menu-title">Error pages</span>
+                            <span class="menu-title">Brand Manage</span>
                             <i class="mdi mdi-chevron-down menu-arrow"></i>
                         </a>
                         <div class="collapse" id="errorSubmenu">
                             <ul class="nav flex-column sub-menu">
                                 <li class="nav-item">
-                                    <a class="nav-link" href="pages/samples/error-404.html">
-                                        404
+                                    <a class="nav-link" href="{{route('admin.brands')}}">
+                                       Brand Manage
                                     </a>
                                 </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="pages/samples/error-500.html">
-                                        500
-                                    </a>
+
+                                <li class="nav-item">  <a class="nav-link" href="{{route('admin.brand.create')}}">Add Brand</a>
                                 </li>
                             </ul>
                         </div>

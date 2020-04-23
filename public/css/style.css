@@ -3,6 +3,14 @@
     background:goldenrod;
 }
 
+.child-rows{
+    padding-left: 20px;
+    border-left:1px solid #dfdfdf;
+    background: #fff;
+}
+.child-rows a.list-group-item{
+    border-left: 0px!important;
+}
 .navbar-light {
 
     background-color: #943a3a;

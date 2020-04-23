@@ -8,14 +8,15 @@
                 @include('layouts.partial.product-sidebar')
             </div>
             <div class="col-md-8">
-                <div class="widget">
+
+
                     <h3>All Products</h3>
                     @include('pages.product.partial.all_product')
-                </div>
 
-                <div class="widget">
 
-                </div>
+
+
+
             </div>
 
         </div>

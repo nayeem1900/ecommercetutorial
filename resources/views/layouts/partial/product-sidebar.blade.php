@@ -1,7 +1,37 @@
-<ul class="list-group list-group-flush">
-    <li class="list-group-item">Cras justo odio</li>
-    <li class="list-group-item">Dapibus ac facilisis in</li>
-    <li class="list-group-item">Morbi leo risus</li>
-    <li class="list-group-item">Porta ac consectetur ac</li>
-    <li class="list-group-item">Vestibulum at eros</li>
-</ul>
+
+
+
+
+
+
+
+
+
+
+    <div class="list-group">
+
+
+
+    @foreach(App\Category::orderBy('name','asc')->where('parent_id', Null)->get() as $parent)
+        <a href="#main-{{$parent->id}}" class="list-group-item list-group-item-action" data-toggle="collapse">
+
+            <img src="{{asset('images/categories/'.$parent->image)}}" width="50">
+            {{$parent->name}}
+        </a>
+
+        <div class="collapse" id="main-{{$parent->id}}">
+            <div class="child-rows">
+
+                @foreach(App\Category::orderBy('name','asc')->where('parent_id', $parent->id)->get() as $child)
+                    <a href="#main-{{$parent->id}}" class="list-group-item list-group-item-action" >
+                        <img src="{{asset('images/categories/'.$child->image)}}" width="30">
+                        {{$child->name}}</a>
+                @endforeach
+            </div>
+
+            </div>
+
+
+    @endforeach
+
+    </div>

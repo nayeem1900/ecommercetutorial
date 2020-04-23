@@ -290,15 +290,7 @@
                                </li>
                                 <li class="nav-item">  <a class="nav-link" href="{{route('admin.category.create')}}">Add Category</a>
                                 </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="pages/layout/sidebar-hidden.html">Sidebar Hidden</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="pages/layout/sidebar-hidden-overlay.html">Sidebar Overlay</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="pages/layout/sidebar-fixed.html">Sidebar Fixed</a>
-                                </li>
+
                             </ul>
                         </div>
                     </li>

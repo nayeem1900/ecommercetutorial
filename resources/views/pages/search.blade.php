@@ -9,7 +9,7 @@
             </div>
             <div class="col-md-8">
                 <div class="widget">
-                    <h3>Search Products</h3>
+                    <h3>Search Products for -<span class="badge badge-primary">{{$search}}</span></h3>
                     @include('pages.product.partial.all_product')
                 </div>
 

@@ -22,8 +22,16 @@ Route::get('/contact', 'PagesController@contact')->name('contact');
 Route::get('/search', 'PagesController@search')->name('search');
 
 
+
+
+
 Route::get('/products', 'PagesController@products')->name('products');
 Route::get('/product/{slug}','ProductController@show')->name('show');
+
+
+
+
+
 //product route
 Route::group(['prefix'=>'admin'], function(){
 
@@ -52,5 +60,21 @@ Route::group(['prefix'=>'admin'], function(){
     Route::get('/category/edit/{id}', 'CategoryController@edit')->name('admin.category.edit');
     Route::post('/category/edit/{id}', 'CategoryController@update')->name('admin.category.update');
     Route::post('/category/delete/{id}', 'CategoryController@category_delete')->name('admin.category.delete');
+
+});
+
+
+//Brand route
+
+
+Route::group(['prefix'=>'admin'], function(){
+
+
+    Route::get('/brand', 'BrandController@index')->name('admin.brands');
+    Route::get('/brand/create', 'BrandController@create')->name('admin.brand.create');
+    Route::post('/brand/create', 'BrandController@store')->name('admin.brand.store');
+    Route::get('/brand/edit/{id}', 'BrandController@edit')->name('admin.brand.edit');
+    Route::post('/brand/edit/{id}', 'BrandController@update')->name('admin.brand.update');
+    Route::post('/brand/delete/{id}', 'BrandController@brand_delete')->name('admin.brand.delete');
 
 });

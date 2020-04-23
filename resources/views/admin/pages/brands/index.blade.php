@@ -276,22 +276,79 @@
                             </ul>
                         </div>
                     </li>
+
                     <li class="nav-item">
                         <a class="nav-link" data-toggle="collapse" href="#sidebar_layouts" aria-expanded="false" aria-controls="sidebar_layouts">
                             <i class="mdi mdi-format-list-bulleted menu-icon"></i>
                             <span class="menu-title">Manage Category</span>
                             <i class="mdi mdi-chevron-down menu-arrow"></i>
                         </a>
-
+                        <div class="collapse" id="sidebar_layouts">
+                            <ul class="nav flex-column sub-menu">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{route('admin.categories')}}">Manage category</a>
+                               </li>
+                                <li class="nav-item">  <a class="nav-link" href="{{route('admin.category.create')}}">Add Category</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="pages/layout/sidebar-hidden.html">Sidebar Hidden</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="pages/layout/sidebar-hidden-overlay.html">Sidebar Overlay</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="pages/layout/sidebar-fixed.html">Sidebar Fixed</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
 
 
                     <!--main pages end-->
                     <!--sample pages start-->
-
+                    <li class="nav-item nav-category">
+                        <span class="nav-link">Sample pages</span>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="collapse" href="#authSubmenu" aria-expanded="false" aria-controls="authSubmenu">
+                            <i class="mdi mdi-lock-outline menu-icon"></i>
+                            <span class="menu-title">Authentication</span>
+                            <i class="mdi mdi-chevron-down menu-arrow"></i>
+                        </a>
+                        <div class="collapse" id="authSubmenu">
+                            <ul class="nav flex-column sub-menu">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="../samples/login.html">
+                                        Login
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="../samples/login-2.html">
+                                        Login 2
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="../samples/register.html">
+                                        Register
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="../samples/register-2.html">
+                                        Register 2
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="../samples/lock-screen.html">
+                                        Lockscreen
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
                     <li class="nav-item">
                         <a class="nav-link" data-toggle="collapse" href="#errorSubmenu" aria-expanded="false" aria-controls="errorSubmenu">
                             <i class="mdi mdi-alert-circle-outline menu-icon"></i>
-                            <span class="menu-title">Brand Manage</span>
+                            <span class="menu-title">Error pages</span>
                             <i class="mdi mdi-chevron-down menu-arrow"></i>
                         </a>
                         <div class="collapse" id="errorSubmenu">
@@ -309,21 +366,90 @@
                             </ul>
                         </div>
                     </li>
-
                     <li class="nav-item">
-                        <a class="nav-link" data-toggle="collapse" href="#sidebar_layouts" aria-expanded="false" aria-controls="sidebar_layouts">
-                            <i class="mdi mdi-format-list-bulleted menu-icon"></i>
-                            <span class="menu-title">Manage Category</span>
+                        <a class="nav-link" data-toggle="collapse" href="#generalSubmenu" aria-expanded="false" aria-controls="generalSubmenu">
+                            <i class="mdi mdi-google-pages menu-icon"></i>
+                            <span class="menu-title">General Pages</span>
                             <i class="mdi mdi-chevron-down menu-arrow"></i>
                         </a>
-                        <div class="collapse" id="sidebar_layouts">
+                        <div class="collapse" id="generalSubmenu">
                             <ul class="nav flex-column sub-menu">
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{route('admin.categories')}}">Manage category</a>
+                                    <a class="nav-link" href="../samples/blank-page.html">
+                                        Blank Page
+                                    </a>
                                 </li>
-                                <li class="nav-item">  <a class="nav-link" href="{{route('admin.category.create')}}">Add Category</a>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="../samples/landing-page.html">
+                                        Landing Page
+                                    </a>
                                 </li>
-
+                                <li class="nav-item">
+                                    <a class="nav-link" href="../samples/profile.html">
+                                        Profile
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="../samples/faq.html">
+                                        FAQ
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="../samples/faq-2.html">
+                                        FAQ 2
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="../samples/news-grid.html">
+                                        News grid
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="../samples/portfolio-1.html">
+                                        Portfolio 1
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="../samples/portfolio-2.html">
+                                        Portfolio 2
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="../samples/search-results.html">
+                                        Search result
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="../samples/timeline.html">
+                                        Timeline
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="collapse" href="#ecommerceSubmenu" aria-expanded="false" aria-controls="ecommerceSubmenu">
+                            <i class="mdi mdi-cart-outline menu-icon"></i>
+                            <span class="menu-title">E-commerce</span>
+                            <i class="mdi mdi-chevron-down menu-arrow"></i>
+                        </a>
+                        <div class="collapse" id="ecommerceSubmenu">
+                            <ul class="nav flex-column sub-menu">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="../samples/pricing.html">
+                                        Pricing
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="../samples/invoice.html">
+                                        Invoice
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="../samples/orders.html">
+                                        Orders
+                                    </a>
+                                </li>
                             </ul>
                         </div>
                     </li>
@@ -561,8 +687,55 @@
                     <li class="nav-item nav-category">
                         <span class="nav-link">Forms</span>
                     </li>
-
-
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="collapse" href="#formsSubmenu" aria-expanded="false" aria-controls="formsSubmenu">
+                            <i class="mdi mdi-clipboard-outline menu-icon"></i>
+                            <span class="menu-title">Form components</span>
+                            <i class="mdi mdi-chevron-down menu-arrow"></i>
+                        </a>
+                        <div class="collapse" id="formsSubmenu">
+                            <ul class="nav flex-column sub-menu">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="../forms/basic-elements.html">Basic elements</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="../forms/x-editable.html">X-editable</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="../forms/typeahead.html">Typeahead</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="../forms/form-repeater.html">Form repeater</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="../forms/form-mask.html">Form mask</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="collapse" href="#advancedSubmenu" aria-expanded="false" aria-controls="advancedSubmenu">
+                            <i class="mdi mdi-repeat menu-icon"></i>
+                            <span class="menu-title">Advanced components</span>
+                            <i class="mdi mdi-chevron-down menu-arrow"></i>
+                        </a>
+                        <div class="collapse" id="advancedSubmenu">
+                            <ul class="nav flex-column sub-menu">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="../forms/form-addons.html">Form addons</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="../forms/form-picker.html">Form Picker</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="../forms/bt-select-splitter.html">Splitter</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="../forms/icheck.html">Icheck</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
                     <li class="nav-item">
                         <a class="nav-link" data-toggle="collapse" href="#validationSubmenu" aria-expanded="false" aria-controls="validationSubmenu">
                             <i class="mdi mdi-flag-outline menu-icon"></i>
@@ -580,7 +753,7 @@
                             </ul>
                         </div>
                     </li>
-                </ul>
+
 
 
                     <!--forms end-->
@@ -597,7 +770,7 @@
                 <div class="card">
                     <div class="card-body">
 
-                        <h2 class="card-title">Product table</h2>
+                        <h2 class="card-title">Brand table</h2>
                         @include('admin.partial.message')
                         <div class="row">
                             <div class="col-12">
@@ -605,32 +778,31 @@
                                     <thead>
                                     <tr>
                                         <th> #</th>
-                                        <th>Product Title</th>
-                                        <th>Product Quantity</th>
-                                        <th>Product Price</th>
+                                        <th>Brand Name</th>
+                                        <th>Brand Image</th>
+
                                         <th>Actions</th>
                                     </tr>
                                     </thead>
                                     <tbody>
                                     <tr>
-                                        @foreach($products as $product)
+                                        @foreach($brands as $brand)
                                         <td>#</td>
-                                        <td>{{$product->title}}</td>
-                                        <td>{{$product->quantity}}</td>
-                                        <td>{{$product->price}}</td>
+                                        <td>{{$brand->name}}</td>
 
-                                        <td>
-                                          <a href="">  <label  class="badge badge-info">view</label> </a>
-                                        </td>
+
+                                            <td><img src="{!!asset('images/brands/' .$brand->image)!!}" width="50"></td>
+
+
                                             <td>
-                                                <a href="{{route('admin.product.edit',$product->id)}}" class="btn btn-outline-primary">Edit</a>
-                                                <a href="#deleteModal{{$product->id}}" data-toggle="modal" class="btn btn-warning">Delete</a>
+                                               <a href="{{route('admin.brand.edit',$brand->id)}}" class="btn btn-outline-primary">Edit</a>
+                                                <a href="#deleteModal{{$brand->id}}" data-toggle="modal" class="btn btn-warning">Delete</a>
 
                                                 <!-- Delete modal -->
 
 
                                                 <!-- Modal -->
-                                                <div class="modal fade" id="deleteModal{{$product->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                              <div class="modal fade" id="deleteModal{{$brand->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                                     <div class="modal-dialog" role="document">
                                                         <div class="modal-content">
                                                             <div class="modal-header">
@@ -640,8 +812,8 @@
                                                                 </button>
                                                             </div>
                                                             <div class="modal-body">
-                                                                <form action="{{route('admin.product.delete',$product->id)}}" method="post">
-                                                                    {{csrf_field()}}
+                                                                <form action="{{route('admin.brand.delete',$brand->id)}}" method="post">
+                                                                   @csrf
                                                                     <button type="submit" class="btn btn-danger" >Permanent Delete</button>
 
                                                                 </form>

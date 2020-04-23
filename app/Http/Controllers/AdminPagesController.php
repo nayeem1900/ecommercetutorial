@@ -51,6 +51,8 @@ class AdminPagesController extends Controller
             'description' => 'required',
             'price' => 'required|numeric',
             'quantity' => 'required|numeric',
+           'brand_id' => 'required|numeric',
+           'category_id' => 'required|numeric',
 
         ]);
 
@@ -64,8 +66,8 @@ class AdminPagesController extends Controller
 
         $product->slug = ($request->title);
         $product->admin_id = 1;
-        $product->brand_id = 1;
-        $product->category_id = 1;
+        $product->brand_id = $request->brand_id;
+        $product->category_id = $request->category_id;
         $product->save();
 
         //ProductImage Model Insert Image
@@ -117,6 +119,8 @@ class AdminPagesController extends Controller
             'description' => 'required',
             'price' => 'required|numeric',
             'quantity' => 'required|numeric',
+            'brand_id' => 'required|numeric',
+            'category_id' => 'required|numeric',
 
         ]);
 
@@ -130,8 +134,8 @@ class AdminPagesController extends Controller
 
         $product->slug = ($request->title);
         $product->admin_id = 1;
-        $product->brand_id = 1;
-        $product->category_id = 1;
+        $product->brand_id = $request->brand_id;
+        $product->category_id = $request->category_id;
         $product->save();
 
         //ProductImage Model Insert Image
