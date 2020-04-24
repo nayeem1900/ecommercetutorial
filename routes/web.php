@@ -19,7 +19,6 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', 'PagesController@index')->name('index');
 Route::get('/contact', 'PagesController@contact')->name('contact');
-Route::get('/search', 'PagesController@search')->name('search');
 
 
 
@@ -27,7 +26,11 @@ Route::get('/search', 'PagesController@search')->name('search');
 
 Route::get('/products', 'PagesController@products')->name('products');
 Route::get('/product/{slug}','ProductController@show')->name('show');
+Route::get('/search', 'PagesController@search')->name('search');
 
+//categories product
+//Route::get('/categories', 'CategoriesController@idex')->name('categories.index');
+Route::get('/pages/categories/{id}', 'CategoriesController@show')->name('categories.show');
 
 
 
