@@ -13,35 +13,60 @@
                 <li class="nav-item">
                     <a class="nav-link" href="{{route('products')}}">Products</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{route('contact')}}">Contact</a>
-                </li>
-              {{--  <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Dropdown
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="#">Action</a>
-                        <a class="dropdown-item" href="#">Another action</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Something else here</a>
-                    </div>
-                </li>--}}
-                {{--<li class="nav-item">
-                    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-                </li>--}}
-            </ul>
-            <form class="form-inline my-2 my-lg-0" action="{!! route('search') !!}" method="get">
-                {{--<input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>--}}
 
-                <div class="input-group mb-3">
-                    <input type="text" class="form-control" placeholder="Search Product" name="search" aria-label="Recipient's username" aria-describedby="button-addon2">
-                    <div class="input-group-append">
-                        <button class="btn btn-outline-secondary"  type="button" id="button-addon2"><i class="fa fa-search"></i></button>
-                    </div>
-                </div>
-            </form>
+
+                <li class="nav-item">
+
+                    <form class="form-inline my-2 my-lg-0" action="{!! route('search') !!}" method="get">
+                        {{--<input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>--}}
+
+                        <div class="input-group mb-3">
+                            <input type="text" class="form-control" placeholder="Search Product" name="search" aria-label="Recipient's username" aria-describedby="button-addon2">
+                            <div class="input-group-append">
+                                <button class="btn btn-outline-secondary"  type="button" id="button-addon2"><i class="fa fa-search"></i></button>
+                            </div>
+                        </div>
+                    </form>
+
+                </li>
+
+            </ul>
+
+            <ul class="navbar-nav ml-auto">
+                <!-- Authentication Links -->
+                @guest
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                </li>
+                @if (Route::has('register'))
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                    </li>
+                @endif
+                @else
+                    <li class="nav-item dropdown">
+                        <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                            {{ Auth::user()->name }} <span class="caret"></span>
+                        </a>
+
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="{{ route('logout') }}"
+                               onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                {{ __('Logout') }}
+                            </a>
+
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                @csrf
+                            </form>
+                        </div>
+                    </li>
+                    @endguest
+            </ul>
+
+
+
         </div>
     </div>
 </nav>

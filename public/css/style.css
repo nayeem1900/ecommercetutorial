@@ -1,3 +1,10 @@
+/*//nav bar css*/
+.mr-auto, .mx-auto{
+
+    margin-right: auto!important;
+    margin-top:12px;
+    margin-bottom: -10px;
+}
 
 .product-item{
     background:goldenrod;
@@ -32,3 +39,4 @@
     background-color: #943a3a;
 
 }
+
