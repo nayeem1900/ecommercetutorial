@@ -82,6 +82,56 @@ Route::group(['prefix'=>'admin'], function(){
 
 });
 
+
+
+
+//Division route
+
+
+Route::group(['prefix'=>'admin'], function(){
+
+
+    Route::get('/division', 'DivisionController@index')->name('admin.divisions');
+    Route::get('/division/create', 'DivisionController@create')->name('admin.division.create');
+    Route::post('/division/create', 'DivisionController@store')->name('admin.division.store');
+    Route::get('/division/edit/{id}', 'DivisionController@edit')->name('admin.division.edit');
+    Route::post('/division/edit/{id}', 'DivisionController@update')->name('admin.division.update');
+    Route::post('/division/delete/{id}', 'DivisionController@division_delete')->name('admin.division.delete');
+
+
+});
+
+
+
+
+
+
+
+//District route
+
+
+Route::group(['prefix'=>'admin'], function(){
+
+
+    Route::get('/district', 'DistrictController@index')->name('admin.districts');
+    Route::get('/district/create', 'DistrictController@create')->name('admin.district.create');
+    Route::post('/district/create', 'DistrictController@store')->name('admin.district.store');
+    Route::get('/district/edit/{id}', 'DistrictController@edit')->name('admin.district.edit');
+    Route::post('/district/edit/{id}', 'DistrictController@update')->name('admin.district.update');
+    Route::post('/district/delete/{id}', 'DistrictController@district_delete')->name('admin.district.delete');
+
+
+
+});
+
+
+
+
+
+
+
+
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

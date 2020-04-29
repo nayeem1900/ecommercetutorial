@@ -238,75 +238,34 @@
                     <li class="nav-item">
                         <a class="nav-link" data-toggle="collapse" href="#generalSubmenu" aria-expanded="false" aria-controls="generalSubmenu">
                             <i class="mdi mdi-google-pages menu-icon"></i>
-                            <span class="menu-title">General Pages</span>
+                            <span class="menu-title">Manage Division</span>
                             <i class="mdi mdi-chevron-down menu-arrow"></i>
                         </a>
                         <div class="collapse" id="generalSubmenu">
                             <ul class="nav flex-column sub-menu">
                                 <li class="nav-item">
-                                    <a class="nav-link" href="pages/samples/blank-page.html">
-                                        Blank Page
+                                    <a class="nav-link" href="{{route('admin.division.create')}}">
+                                      Division Create
                                     </a>
                                 </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="pages/samples/landing-page.html">
-                                        Landing Page
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="pages/samples/profile.html">
-                                        Profile
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="pages/samples/faq.html">
-                                        FAQ
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="pages/samples/faq-2.html">
-                                        FAQ 2
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="pages/samples/news-grid.html">
-                                        News grid
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="pages/samples/portfolio-1.html">
-                                        Portfolio 1
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="pages/samples/portfolio-2.html">
-                                        Portfolio 2
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="pages/samples/search-results.html">
-                                        Search result
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="pages/samples/timeline.html">
-                                        Timeline
-                                    </a>
-                                </li>
+
+
+
+
                             </ul>
                         </div>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" data-toggle="collapse" href="#ecommerceSubmenu" aria-expanded="false" aria-controls="ecommerceSubmenu">
                             <i class="mdi mdi-cart-outline menu-icon"></i>
-                            <span class="menu-title">E-commerce</span>
+                            <span class="menu-title">Manage District</span>
                             <i class="mdi mdi-chevron-down menu-arrow"></i>
                         </a>
                         <div class="collapse" id="ecommerceSubmenu">
                             <ul class="nav flex-column sub-menu">
                                 <li class="nav-item">
-                                    <a class="nav-link" href="pages/samples/pricing.html">
-                                        Pricing
+                                    <a class="nav-link" href="{{route('admin.district.create')}}">
+                                        District Create
                                     </a>
                                 </li>
                                 <li class="nav-item">
