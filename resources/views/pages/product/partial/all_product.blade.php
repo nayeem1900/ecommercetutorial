@@ -20,8 +20,8 @@
                     <h4 class="card-title">
                         <a href="{!! route('show',$product->slug) !!}">{{$product->title}}</a> </h4>
 
-                    <p class="card-text">{{$product->price}}</p>
-                    <a href="#" class="btn btn-outline-warning">Add to Cart</a>
+                    <p class="card-text">{{$product->price}} Taka</p>
+                   @include('pages.product.partial.cart-button')
                 </div>
             </div>
         </div>

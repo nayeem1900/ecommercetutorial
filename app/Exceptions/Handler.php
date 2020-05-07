@@ -5,6 +5,12 @@ namespace App\Exceptions;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
 use Throwable;
 
+use Illuminate\Auth\AuthenticationException;
+
+use App\User;
+
+use App\Admin;
+
 class Handler extends ExceptionHandler
 {
     /**
@@ -50,6 +56,36 @@ class Handler extends ExceptionHandler
      */
     public function render($request, Throwable $exception)
     {
+
+       $class=get_class($exception);
+       switch ($class){
+
+           case '$exception':
+
+               $guard = Arr::get($exception->guards(),0);
+
+                    switch ($guard){
+
+                        case 'admin':
+
+                            $login="admin.login";
+
+                            break;
+                        case 'web':
+                            $login="login";
+                            break;
+                        default:
+                            $login="login";
+
+                            break;
+                    }
+
+            return redirect()->route('$login');
+           break;
+
+       }
+
+
         return parent::render($request, $exception);
     }
 }

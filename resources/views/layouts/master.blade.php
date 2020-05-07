@@ -5,7 +5,7 @@
   @include('layouts.partial.style')
 </head>
 <body>
-<div class="wrapper">
+<div class="wrapper ">
    {{-- Navigation--}}
 
 @include('layouts.partial.nav')
@@ -24,5 +24,6 @@
 
 
 @include('layouts.partial.script')
+
 </body>
 </html>

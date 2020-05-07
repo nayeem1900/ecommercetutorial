@@ -34,7 +34,24 @@
             </ul>
 
             <ul class="navbar-nav ml-auto">
+
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('carts') }}">
+
+                        <button class="btn-danger">
+                            <span class="mt-1">Cart</span>
+
+                            <span class="badge badge-warning">
+                            {{App\Cart::totalItems()}}
+                            </span>
+                        </button>
+
+
+                    </a>
+                </li>
+
                 <!-- Authentication Links -->
+
                 @guest
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
@@ -46,16 +63,30 @@
                 @endif
                 @else
                     <li class="nav-item dropdown">
+
+
+
                         <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                            {{ Auth::user()->first_name }} {{ Auth::user()->last_name }} <span class="caret"></span>
+                           
+                           <img src="{{App\Helpers\ImageHelper::getUserImage(Auth::user()->id)}}" style=width:100px;>
+                            {{ Auth::user()->first_name}}{{ Auth::user()->_name}} <span class="caret"></span>
                         </a>
 
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+
+                            <a class="dropdown-item" href="{{ route('user.dashboard') }}"
+                              >
+                                {{ __('My Dashboard') }}
+                            </a>
+
+
                             <a class="dropdown-item" href="{{ route('logout') }}"
                                onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                                 {{ __('Logout') }}
                             </a>
+
+
 
                             <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                 @csrf

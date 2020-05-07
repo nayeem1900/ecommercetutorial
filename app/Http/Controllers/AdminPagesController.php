@@ -5,11 +5,24 @@ namespace App\Http\Controllers;
 use App\Product;
 use Illuminate\Http\Request;
 use Image;
-
 use App\ProductImage;
 use Session;
+use App\User;
+
 class AdminPagesController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth:admin');
+
+    }
+   
+    /*public function showLoginForm()
+    {
+        return view('auth.admin.login');
+    }*/
+
     public function index()
     {
 

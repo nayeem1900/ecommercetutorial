@@ -20,6 +20,12 @@ class CreateDistrictsTable extends Migration
             $table->unsignedTinyInteger('division_id');
 
             $table->timestamps();
+
+
+            $table->foreignId('division_id')
+                ->constrained()
+                ->onDelete('cascade');
+
         });
     }
 

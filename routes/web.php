@@ -39,6 +39,10 @@ Route::get('/pages/categories/{id}', 'CategoriesController@show')->name('categor
 Route::group(['prefix'=>'admin'], function(){
 
     Route::get('/', 'AdminPagesController@index')->name('admin.pages.n');
+
+
+    //Route::get('/login', 'AdminPagesController@showLoginForm')->name('admin.login');
+
    // Route::get('/pages', 'AdminPagesController@index')->name('admin.pages.index');
 
     Route::get('/products', 'AdminPagesController@manage_products')->name('admin.products');
@@ -125,21 +129,54 @@ Route::group(['prefix'=>'admin'], function(){
 });
 
 
+//User Route
+Route::group(['prefix'=>'user'], function() {
+    Route::get('/token/{token}', 'VerificationController@verify')->name('user.verification');
+    Route::get('/dashboard', 'UsersController@dashboard')->name('user.dashboard');
+    Route::get('/profile', 'UsersController@profile')->name('user.profile');
+    Route::post('/profile/update', 'UsersController@profileupdate')->name('user.profile.update');
+});
+
+
+//Cart Route
+Route::group(['prefix'=>'cart'], function(){
+
+Route::get('/', 'CartsController@index')->name('carts');
+
+Route::post('/store', 'CartsController@store')->name('carts.store');
+Route::post('/update/{id}', 'CartsController@update')->name('carts.update');
+Route::post('/delete/{id}', 'CartsController@destroy')->name('carts.delete');
+
+});
+
+//Checkout Route
+Route::group(['prefix'=>'checkout'], function(){
+
+    Route::get('/', 'CheckoutsController@index')->name('checkouts');
+
+    Route::post('/store', 'CheckoutsController@store')->name('checkouts.store');
+
+});
 
 
 
+//Admin Route
+/*Route::group(['prefix'=>'admin'], function() {
+    Route::get('/', 'APagesController@index')->name('admin.index');
 
+    //Admin Login Route
+    Route::get('/login', 'Auth\Admin\LoginController@showLoginForm')->name('admin.index');
 
+});*/
 
+//Admin User Login
+Route::get('/admin/login', 'Admin\LoginController@showLoginForm')->name('auth.admin.login');
+Route::get('/login/submit', 'Admin\LoginController@login')->name('admin.login.submit');
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
 
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
+//Route::prefix('admin')->group(base_path('routes/admin.php'));

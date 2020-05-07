@@ -45,8 +45,30 @@ return [
             'driver' => 'token',
             'provider' => 'users',
             'hash' => false,
+
         ],
+
+        //Guard for Admin
+
+        'admin' => [
+            'driver' => 'session',
+            'provider' => 'admins',
+        ],
+
+        'admin-api' => [
+            'driver' => 'token',
+            'provider' => 'admins',
+            'hash' => false,
+
+        ],
+
     ],
+
+
+
+
+
+
 
     /*
     |--------------------------------------------------------------------------
@@ -75,7 +97,21 @@ return [
         //     'driver' => 'database',
         //     'table' => 'users',
         // ],
+
+        //for Admin
+        'admins' => [
+            'driver' => 'eloquent',
+            'model' => App\Admin::class,
+
     ],
+
+],
+
+
+
+
+
+
 
     /*
     |--------------------------------------------------------------------------
@@ -98,8 +134,22 @@ return [
             'table' => 'password_resets',
             'expire' => 60,
             'throttle' => 60,
+
         ],
+
+        //for Admin
+
+
+        'admins' => [
+            'provider' => 'admins',
+            'table' => 'password_resets',
+            'expire' => 60,
+            'throttle' => 60,
     ],
+
+],
+
+
 
     /*
     |--------------------------------------------------------------------------

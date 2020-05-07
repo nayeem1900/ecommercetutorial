@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Auth;
+namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
@@ -9,8 +9,8 @@ use Illuminate\Http\Request;
 use App\Notifications\VerifiRegistration;
 use App\User;
 
-use App\Admin;
-use Auth;
+
+
 class LoginController extends Controller
 {
     /*
@@ -31,7 +31,7 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/';
+    protected $redirectTo = '/admin/login';
 
     /**
      * Create a new controller instance.
