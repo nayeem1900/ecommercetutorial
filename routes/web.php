@@ -40,11 +40,6 @@ Route::group(['prefix'=>'admin'], function(){
 
     Route::get('/', 'AdminPagesController@index')->name('admin.pages.n');
 
-
-    //Route::get('/login', 'AdminPagesController@showLoginForm')->name('admin.login');
-
-   // Route::get('/pages', 'AdminPagesController@index')->name('admin.pages.index');
-
     Route::get('/products', 'AdminPagesController@manage_products')->name('admin.products');
     Route::get('/product/edit/{id}', 'AdminPagesController@product_edit')->name('admin.product.edit');
     Route::get('/product/create', 'AdminPagesController@create')->name('admin.product.create');
@@ -170,12 +165,19 @@ Route::group(['prefix'=>'checkout'], function(){
 });*/
 
 //Admin User Login
-Route::get('/admin/login', 'Admin\LoginController@showLoginForm')->name('auth.admin.login');
-Route::get('/login/submit', 'Admin\LoginController@login')->name('admin.login.submit');
+Route::get('/admin/login', 'Admin\LoginController@showLoginForm')->name('admin.login');
+Route::post('/login/submit', 'Admin\LoginController@login')->name('admin.login.submit');
+
+Route::get('/admin', 'APagesController@adminpage')->name('admin');
+
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+
+
+
 
 
 
