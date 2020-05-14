@@ -298,8 +298,19 @@
                                     <a class="nav-link" href="pages/ui-features/accordions.html">Accordions</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="pages/ui-features/buttons.html">Buttons</a>
+                                    <a class="nav-link" href="">Logout
+
+                                        <form class="form-inline" action="{{route('admin.logout')}}"method="post">
+                                            @csrf
+                                            <input type="submit" value="Logout Now"class="btn btn-danger">
+
+
+                                        </form>
+
+
+                                    </a>
                                 </li>
+
                                 <li class="nav-item">
                                     <a class="nav-link" href="pages/ui-features/dropdowns.html">Dropdowns</a>
                                 </li>
@@ -309,6 +320,44 @@
                             </ul>
                         </div>
                     </li>
+
+
+
+                    {{--logout--}}
+{{--
+
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="collapse" href="#uiBasicSubmenu" aria-expanded="false" aria-controls="uiBasicSubmenu">
+                            <i class="mdi mdi-buffer menu-icon"></i>
+                            <span class="menu-title">Logout</span>
+                            <i class="mdi mdi-chevron-down menu-arrow"></i>
+                        </a>
+                        <div class="collapse" id="uiBasicSubmenu">
+                            <ul class="nav flex-column sub-menu">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="">Logout
+
+                                    <form class="form-inline" action="{{route('admin.logout')}}"method="post">
+                                        @csrf
+                                        <input type="submit" value="Logout Now"class="btn btn-danger">
+
+
+                                    </form>
+
+
+                                    </a>
+                                </li>
+
+
+                            </ul>
+                        </div>
+                    </li>
+--}}
+
+
+
+
+
                     <li class="nav-item">
                         <a class="nav-link" data-toggle="collapse" href="#uiAdvancedSubmenu" aria-expanded="false" aria-controls="uiAdvancedSubmenu">
                             <i class="mdi mdi-cube-outline menu-icon"></i>

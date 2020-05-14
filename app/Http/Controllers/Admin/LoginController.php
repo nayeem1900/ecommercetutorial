@@ -9,7 +9,8 @@ use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
 use App\Notifications\VerifiRegistration;
 use App\User;
-use Auth;
+use Illuminate\Support\Facades\Auth;
+
 
 
 class LoginController extends Controller
@@ -24,6 +25,7 @@ class LoginController extends Controller
     | to conveniently provide its functionality to your applications.
     |
     */
+
 
     use AuthenticatesUsers;
 
@@ -44,9 +46,9 @@ class LoginController extends Controller
    public function __construct()
     {
 
-        $this->middleware('guest')->except('logout');
-        $this->middleware('guest:admin')->except('logout');
+       // $this->middleware('guest')->except('logout');
 
+        $this->middleware('guest:admin')->except('logout');
     }
 
 public function showLoginForm()
@@ -56,53 +58,9 @@ public function showLoginForm()
 
 
 
-
-
-        /*$this->validate($request, [
-            'email'   => 'required|email',
-            'password' => 'required'
-        ]);
-
-        if (Auth::guard('admin')->attempt(['email' => $request->email, 'password' => $request->password], $request->get('remember'))) {
-
-            return redirect()->intended('admin/pages/n');
-        }
-        return back()->withInput($request->only('email', 'remember'));*/
-
-
-
-
-        // Validate the form data
-        /*$this->validate($request, [
-            'email'   => 'required|email',
-            'password' => 'required'
-        ]);
-
-        // Attempt to log the user in
-        if (Auth::guard('admin')->attempt(['email' => $request->email, 'password' => $request->password], $request->remember)) {
-            // if successful, then redirect to their intended location
-            return redirect()->intended(route('/admin/pages/n'));
-        }
-        // if unsuccessful, then redirect back to the login with the form data
-        return redirect()->back()->withInput($request->only('email', 'remember'));
-    }
-
-    public function logout()
-    {
-        Auth::guard('admin')->logout();
-        return redirect('/admin');
-    }*/
-
-
-
-
-
-
     public function login(Request $request)
     {
 
-
-        dd('test');
 
 
         $this->validate($request, [
@@ -115,25 +73,47 @@ public function showLoginForm()
 
         //find ueer by this email
 
-//login this user
 
 
-//login this user
-        if (Auth::guard('admin')->attempt(['email' => $request->email, 'password' => $request->password], $request->remember)) {
+//login this admin
+            if (Auth::guard('admin')->attempt(['email' => $request->email, 'password' => $request->password], $request->remember)) {
 
-            ///login now
-            // return redirect()->intended(route('/admin'));
 
-            return redirect()->route('/admin');
-        } else {
+                ///login now
+                return redirect()->intended(route('admin.adminpage'));
 
-            session()->flush('errors', 'InValid');
-            return back();
 
-        }
+            }else {
 
-    }
+                session()->flush('errors', 'InValid');
+                return back();
+            }
+
 }
+
+
+
+public function logout(Request $request)
+{
+
+$this->guard()->logout();
+$request->session()->invalidate();
+return redirect()->route('admin.login');
+
+}
+
+
+
+}
+
+
+
+
+
+
+
+
+
 
 
 

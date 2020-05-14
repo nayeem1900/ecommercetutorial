@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Cart;
 use Illuminate\Http\Request;
 use Auth;
+use phpDocumentor\Reflection\Types\Null_;
 use Session;
 use App\Product;
 use App\Order;
@@ -52,11 +53,13 @@ class CartsController extends Controller
 
         $cart=Cart::Where('user_id', Auth::id())
             -> Where('product_id',$request->product_id)
+            -> Where('order_id',Null)
             ->first();
 
     }else{
         $cart=Cart::Where('ip_address', request()->ip())
             -> Where('product_id',$request->product_id)
+            -> Where('order_id',Null)
             ->first();
 
 

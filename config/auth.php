@@ -55,13 +55,6 @@ return [
             'provider' => 'admins',
         ],
 
-        'admin-api' => [
-            'driver' => 'token',
-            'provider' => 'admins',
-            'hash' => false,
-
-        ],
-
     ],
 
 
@@ -138,7 +131,6 @@ return [
         ],
 
         //for Admin
-
 
         'admins' => [
             'provider' => 'admins',

@@ -14,7 +14,7 @@ class ProductController extends Controller
         return view('pages.product.show', compact('product'));
 
     }else{
-        session()->flash('errors','Sorry There is o product');
+        session()->flash('errors','Sorry There is 0 product');
         return redirect()->route('products');
     }
 

@@ -167,8 +167,9 @@ Route::group(['prefix'=>'checkout'], function(){
 //Admin User Login
 Route::get('/admin/login', 'Admin\LoginController@showLoginForm')->name('admin.login');
 Route::post('/login/submit', 'Admin\LoginController@login')->name('admin.login.submit');
+Route::post('/logout/submit', 'Admin\LoginController@logout')->name('admin.logout');
 
-Route::get('/admin', 'APagesController@adminpage')->name('admin');
+Route::get('/admin', 'APagesController@adminpage')->name('admin.adminpage');
 
 
 Auth::routes();

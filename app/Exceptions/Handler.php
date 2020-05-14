@@ -58,7 +58,7 @@ class Handler extends ExceptionHandler
             return response()->json(['error' => 'Unauthenticated.'], 401);
         }
         if ($request->is('admin') || $request->is('admin/*')) {
-            return redirect()->guest('/login/admin');
+            return redirect()->guest('/admin/login');
         }
         if ($request->is('web') || $request->is('user/*')) {
             return redirect()->guest('/login/user');
@@ -66,18 +66,18 @@ class Handler extends ExceptionHandler
         return redirect()->guest(route('login'));
 
     }
-}
 
 
 
-    /*  $class=get_class($exception);
+
+    /* $class=get_class($exception);
        switch ($class){
 
-           case ' Illuminate\Auth\AuthenticationException':
+           case 'Auth':
 
-               $guard = Arr::get($exception->guards(),0);
+               $guard =array_get($exception->guards(),0);
 
-                    switch ($guard){
+               switch ($guard){
 
                         case 'admin':
 
@@ -87,17 +87,14 @@ class Handler extends ExceptionHandler
                         case 'web':
                             $login="login";
                             break;
-                        default:
-                            $login="login";
 
-                            break;
                     }
 
             return redirect()->route('$login');
            break;
 
-       }
+       }*/
 
-       return parent::render($request, $exception);
+//}   return parent::render($request, $exception);
+
 }
-}*/

@@ -69,7 +69,7 @@
                         <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                            
                            <img src="{{App\Helpers\ImageHelper::getUserImage(Auth::user()->id)}}" style=width:100px;>
-                            {{ Auth::user()->first_name}}{{ Auth::user()->_name}} <span class="caret"></span>
+                            {{ Auth::user()->first_name}}{{ Auth::user()->last_name}} <span class="caret"></span>
                         </a>
 
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
@@ -94,6 +94,36 @@
                         </div>
                     </li>
                     @endguest
+
+                  {{--  @else
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('admin.login') }}">Login</a>
+                        </li>
+                       --}}{{-- <li class="nav-item">
+                            <a class="nav-link" href="{{ route('register') }}">Register</a>
+                        </li--}}{{-->
+                    @endif
+                    @if(Auth::guard('admin')->check())
+                        <li class="nav-item dropdown">
+                            <a id="adminDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                {{ Auth::guard('admin')->user()->name }} (ADMIN) <span class="caret"></span>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="adminDropdown">
+                                <a href="{{route('admin.adminpage')}}" class="dropdown-item">Dashboard</a>
+                                <a class="dropdown-item" href="#" onclick="event.preventDefault();document.querySelector('#admin-logout-form').submit();">
+                                    Logout
+                                </a>
+                                <form id="admin-logout-form" action="{{ route('admin.logout') }}" method="POST" style="display: none;">
+                                    @csrf
+                                </form>
+                            </div>
+                        </li>
+                        @endguest
+--}}
+
+
+
+         {{--  admin--}}
             </ul>
 
 

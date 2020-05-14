@@ -22,27 +22,21 @@ class RedirectIfAuthenticated
 
 
 
-        if ($guard == "admin" && Auth::guard($guard)->check()) {
-            return redirect('admin.pages.n');
+    /*   if ($guard == "admin" && Auth::guard($guard)->check()) {
+            return redirect()->route('admin.adminpage');
         }
         if ($guard == "web" && Auth::guard($guard)->check()) {
-            return redirect('user.dashboard');
-        }
-        if (Auth::guard($guard)->check()) {
             return redirect('user/dashboard');
-        }
+        }*/
 
 
-
-
-
-       /* switch ($guard){
+        switch ($guard){
 
                     case 'admin':
 
                         if(Auth::guard($guard)->check()){
 
-                            return redirect()->route('admin.index');
+                            return redirect()->route('admin.adminpage');
                         }
 
                         break;
@@ -55,16 +49,8 @@ class RedirectIfAuthenticated
                         }
 
                         break;
-                    default:
-                        if(Auth::guard($guard)->check()){
 
-                            return redirect()->route('user.dashboard');
-                        }
-
-
-                        break;
-
-                }*/
+                }
 
 
 
