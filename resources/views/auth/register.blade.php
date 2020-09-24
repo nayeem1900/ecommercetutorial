@@ -65,7 +65,7 @@
 
                                 <select class="form-control" name="division_id">
 
-                                    <option value="">Please select YOur Division</option>
+                                    <option value="">Please select Your Division</option>
                                     @foreach($divisions as $division)
                                         <option value="{{$division->id}}">{{$division->name}}</option>
                                     @endforeach
@@ -84,7 +84,7 @@
 
                                 <select class="form-control" name="district_id">
 
-                                    <option value="">Please select YOur District</option>
+                                    <option value="">Please select Your District</option>
                                     @foreach($districts as $district)
                                         <option value="{{$district->id}}">{{$district->name}}</option>
                                     @endforeach

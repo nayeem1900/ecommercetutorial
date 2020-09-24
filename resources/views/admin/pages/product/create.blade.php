@@ -531,7 +531,7 @@
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">Select Category</label>
                                    <select class="form-control" name="category_id">
-                                       <option value="">Please select a category for thr Product</option>
+                                       <option value="">Please select a category for this Product</option>
                                        @foreach(App\Category::orderBy('name','asc')->where('parent_id', Null)->get() as $parent)
                                            <option value="{{$parent->id}}">{{$parent->name}}</option>
 

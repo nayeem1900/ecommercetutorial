@@ -22,7 +22,7 @@ class RedirectIfAuthenticated
 
 
 
-    /*   if ($guard == "admin" && Auth::guard($guard)->check()) {
+   /*  if ($guard == "admin" && Auth::guard($guard)->check()) {
             return redirect()->route('admin.adminpage');
         }
         if ($guard == "web" && Auth::guard($guard)->check()) {
@@ -30,7 +30,7 @@ class RedirectIfAuthenticated
         }*/
 
 
-        switch ($guard){
+       switch ($guard){
 
                     case 'admin':
 

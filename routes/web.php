@@ -168,8 +168,11 @@ Route::group(['prefix'=>'checkout'], function(){
 Route::get('/admin/login', 'Admin\LoginController@showLoginForm')->name('admin.login');
 Route::post('/login/submit', 'Admin\LoginController@login')->name('admin.login.submit');
 Route::post('/logout/submit', 'Admin\LoginController@logout')->name('admin.logout');
+//admin password reset
+/*Route::get('/password/reset', 'Admin\ForgotPasswordController@showLinkRequestForm')->name('admin.password.request');
+Route::post('/password/email', 'Admin\ForgotPasswordController@sendResetLinkEmail')->name('admin.password.email');*/
 
-Route::get('/admin', 'APagesController@adminpage')->name('admin.adminpage');
+//Route::get('/admin', 'APagesController@adminpage')->name('admin.adminpage');
 
 
 Auth::routes();

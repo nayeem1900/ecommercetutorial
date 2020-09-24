@@ -64,37 +64,35 @@ class Handler extends ExceptionHandler
             return redirect()->guest('/login/user');
         }
         return redirect()->guest(route('login'));
-
     }
 
 
+        /* $class = get_class($exception);
+         switch ($class) {
 
+             case 'Auth':
 
-    /* $class=get_class($exception);
-       switch ($class){
+                 $guard = array_get($exception->guards(), 0);
 
-           case 'Auth':
+                 switch ($guard) {
 
-               $guard =array_get($exception->guards(),0);
+                     case 'admin':
 
-               switch ($guard){
+                         $login = "admin.login";
 
-                        case 'admin':
+                         break;
+                     case 'web':
+                         $login = "login";
+                         break;
 
-                            $login="admin.login";
+                 }
 
-                            break;
-                        case 'web':
-                            $login="login";
-                            break;
+                 return redirect()->route('$login');
+                 break;
 
-                    }
+         }
 
-            return redirect()->route('$login');
-           break;
+         return parent::render($request, $exception);
 
-       }*/
-
-//}   return parent::render($request, $exception);
-
+     }*/
 }

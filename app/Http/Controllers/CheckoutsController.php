@@ -12,6 +12,10 @@ use phpDocumentor\Reflection\Types\Null_;
 class CheckoutsController extends Controller
 {
 
+
+
+
+
     public function index(){
 
        $payments=Payment::orderBy('priority', 'asc')->get();

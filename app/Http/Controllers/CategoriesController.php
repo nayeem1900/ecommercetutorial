@@ -10,7 +10,11 @@ use Illuminate\Http\Request;
 
 class CategoriesController extends Controller
 {
+
+
+
     /**
+
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
@@ -25,6 +29,14 @@ class CategoriesController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+    public function __construct()
+    {
+        $this->middleware('auth:admin');
+
+    }
+
+
     public function show($id)
     {
         $category = Category::find($id);

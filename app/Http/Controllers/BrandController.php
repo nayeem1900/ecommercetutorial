@@ -12,6 +12,12 @@ class BrandController extends Controller
 {
 
 
+    public function __construct()
+    {
+        $this->middleware('auth:admin');
+    }
+
+
     public function index(){
 
         $brands=Brand::orderBy('id', 'desc')->get();
@@ -81,7 +87,7 @@ class BrandController extends Controller
 
     public function store(Request $request){
 
-        $this->validate($request,[
+               $this->validate($request,[
             'name'=>'required',
             'image'=>'nullable|image',
 

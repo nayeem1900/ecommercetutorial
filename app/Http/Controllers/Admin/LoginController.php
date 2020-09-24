@@ -10,7 +10,7 @@ use Illuminate\Http\Request;
 use App\Notifications\VerifiRegistration;
 use App\User;
 use Illuminate\Support\Facades\Auth;
-
+use Illuminate\Support\Facades\Session;
 
 
 class LoginController extends Controller
@@ -29,13 +29,19 @@ class LoginController extends Controller
 
     use AuthenticatesUsers;
 
+    protected function guard()
+    {
+        return Auth::guard('guard-name');
+    }
+
+
     /**
      * Where to redirect users after login.
      *
      * @var string
      */
-    protected $redirectTo = '/admin';
 
+ //protected $redirectTo = '/admin';
     /**
      * Create a new controller instance.
      *
@@ -43,13 +49,13 @@ class LoginController extends Controller
      */
 
 
-   public function __construct()
+  /* public function __construct()
     {
 
        // $this->middleware('guest')->except('logout');
 
         $this->middleware('guest:admin')->except('logout');
-    }
+    }*/
 
 public function showLoginForm()
 {
@@ -57,14 +63,10 @@ public function showLoginForm()
 }
 
 
-
     public function login(Request $request)
     {
 
-
-
         $this->validate($request, [
-
 
             'email' => 'required|email',
             'password' => 'required',
@@ -80,15 +82,15 @@ public function showLoginForm()
 
 
                 ///login now
-                return redirect()->intended(route('admin.adminpage'));
+                return redirect()->intended(route('admin.pages.n'));
 
 
             }else {
 
                 session()->flush('errors', 'InValid');
-                return back();
+                //return redirect()->route('admin.login');
+               return back();
             }
-
 }
 
 
